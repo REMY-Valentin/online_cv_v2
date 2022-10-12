@@ -70,10 +70,10 @@ const Home = ({ skills, projects }: Props) => {
 };
 
 export const getServerSideProps: GetStaticProps = async () => {
-  const resSkills = await fetch("http://localhost:3000/api/skills");
+  const resSkills = await fetch("http://127.0.0.1:3000/api/skills");
   const skills: Props = await resSkills.json();
 
-  const resProj = await fetch("http://localhost:3000/api/projects");
+  const resProj = await fetch("http://127.0.0.1:3000/api/projects");
   const projects: Props = await resProj.json();
   // console.log(skill);
   return {
