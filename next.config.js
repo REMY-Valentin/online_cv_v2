@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["https://cv-beta-eight.vercel.app/"],
+    domains: ["cv-beta-eight.vercel.app", "localhost"],
   },
   typescript: {
     // !! WARN !!
