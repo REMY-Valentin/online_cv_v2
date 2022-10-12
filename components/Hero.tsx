@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { Typewriter } from "react-simple-typewriter";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 import BackgroundCircle from "./BackgroundCircle";
 import profilePic from "../public/bob_kerman.jpg";
 import Link from "next/link";
@@ -8,6 +8,11 @@ import Link from "next/link";
 type Props = {};
 
 function Hero({}: Props) {
+  const [text, count] = useTypewriter({
+    words: ["THAT’S ONE SMALL STEP FOR MAN, ONE GIANT LEAP FOR MANKIND", "HOUSTON, WE’VE HAD A PROBLEM HERE."],
+    loop: true,
+    delaySpeed: 2000,
+  });
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircle />
@@ -21,22 +26,8 @@ function Hero({}: Props) {
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">Developpeur web</h2>
         <h1 className="text-5xl lg:text-6xl font-semibold px-10">
-          <span>
-            <Typewriter
-              words={[
-                "THAT’S ONE SMALL STEP FOR MAN, ONE GIANT LEAP FOR MANKIND",
-                "HOUSTON, WE’VE HAD A PROBLEM HERE.",
-                "Code",
-                "Repeat!",
-              ]}
-              loop={false}
-              cursor
-              cursorStyle="#F7AB0A"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={2000}
-            />
-          </span>
+          <span>{text}</span>
+          <Cursor cursorColor="#F7AB0A" />
         </h1>
         <div className="pt-5">
           <Link href="#about">
