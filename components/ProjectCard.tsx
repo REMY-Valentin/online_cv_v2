@@ -49,7 +49,7 @@ function ProjectCard({ project }: Props) {
         }}
       >
         <Image
-          src={"http://localhost:3000/api/" + project.image}
+          src={"https://online-cv-v2-remy-valentin.vercel.app/api/" + project.image}
           alt="project image"
           height={250}
           width={450}
