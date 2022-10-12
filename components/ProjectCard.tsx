@@ -3,30 +3,25 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import * as faIcone from "react-icons/fa";
 import * as siIcone from "react-icons/si";
+import { Projects } from "../typings";
+import { urlFor } from "../sanity";
 
-interface Props {
-  project: {
-    id: number;
-    name: string;
-    technos: {
-      name: string;
-      size: number;
-    }[];
-    text: string[];
-    image: string;
-  };
-}
+type Props = {
+  project: Projects;
+};
 
 function ProjectCard({ project }: Props) {
-  function IconeSelector(name: string, size: number, index: number) {
+  console.log(project);
+  function IconeSelector(name: string, index: number) {
+    // console.log(typeof name);
     let library = name.slice(0, 2).toLowerCase();
     if (library === "fa") {
       let icone = faIcone[name];
-      let elem = React.createElement(icone, { size: size, key: index });
+      let elem = React.createElement(icone, { size: 30, key: index });
       return elem;
     } else if (library === "si") {
       let icone = siIcone[name];
-      let elem = React.createElement(icone, { size: size, key: index });
+      let elem = React.createElement(icone, { size: 30, key: index });
       return elem;
     }
   }
@@ -49,7 +44,7 @@ function ProjectCard({ project }: Props) {
         }}
       >
         <Image
-          src={"https://online-cv-v2-remy-valentin.vercel.app/api/" + project.image}
+          src={urlFor(project?.image).url()}
           alt="project image"
           height={250}
           width={450}
@@ -58,9 +53,7 @@ function ProjectCard({ project }: Props) {
       </motion.div>
       <div className="px-0 md:px-10">
         <h4 className="text-4xl font-light">{project.name}</h4>
-        <div className="flex space-x-2 my-2">
-          {project.technos.map((icone, index) => IconeSelector(icone.name, icone.size, index))}
-        </div>
+        <div className="flex space-x-2 my-2">{project.technos.map((icone, index) => IconeSelector(icone, index))}</div>
         <ul className="list-disc space-y-4 ml-5 text-lg">
           {project.text.map((item, index) => (
             <li key={index}>{item}</li>

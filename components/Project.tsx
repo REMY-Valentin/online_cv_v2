@@ -1,19 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
+import { Projects } from "../typings";
 
-interface Props {
-  projects: {
-    id: number;
-    name: string;
-    technos: {
-      name: string;
-      size: number;
-    }[];
-    text: string[];
-    image: string;
-  }[];
-}
+type Props = {
+  projects: Projects[];
+};
 
 function Project({ projects }: Props) {
   return (

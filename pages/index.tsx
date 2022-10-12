@@ -1,34 +1,19 @@
-import type { GetStaticProps } from "next";
+import type { GetServerSideProps, GetStaticProps } from "next";
 import Head from "next/head";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Project from "../components/Project";
-import Skills from "../components/Skills";
-// import { Skill } from "../typings";
+import SkillsComp from "../components/Skills";
+import { Projects, Skills } from "../typings";
+import { fetchProjects } from "../utils/fetchProjects";
+import { fetchSkills } from "../utils/fetchSkills";
 
-interface Props {
-  skills: {
-    id: number;
-    name: string;
-    iconeName: string;
-    library: string;
-    size: number;
-    lvl: number;
-    directionLeft?: boolean;
-  }[];
-  projects: {
-    id: number;
-    name: string;
-    technos: {
-      name: string;
-      size: number;
-    }[];
-    text: string[];
-    image: string;
-  }[];
-}
+type Props = {
+  skills: Skills[];
+  projects: Projects[];
+};
 const Home = ({ skills, projects }: Props) => {
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]">
@@ -49,7 +34,7 @@ const Home = ({ skills, projects }: Props) => {
       </section>
 
       <section id="skills" className="snap-start">
-        <Skills skills={skills} />
+        <SkillsComp skills={skills} />
       </section>
 
       <section id="project" className="snap-center">
@@ -69,13 +54,9 @@ const Home = ({ skills, projects }: Props) => {
   );
 };
 
-export const getServerSideProps: GetStaticProps = async () => {
-  const resSkills = await fetch("https://online-cv-v2-remy-valentin.vercel.app/api/skills");
-  const skills: Props = await resSkills.json();
-
-  const resProj = await fetch("https://online-cv-v2-remy-valentin.vercel.app/api/projects");
-  const projects: Props = await resProj.json();
-  // console.log(skill);
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  const skills: Skills[] = await fetchSkills();
+  const projects: Projects[] = await fetchProjects();
   return {
     props: {
       skills,

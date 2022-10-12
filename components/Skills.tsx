@@ -1,18 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import SkillObj from "./Skill";
+import { Skills } from "../typings";
 
-interface Props {
-  skills: {
-    id: number;
-    name: string;
-    iconeName: string;
-    library: string;
-    size: number;
-    lvl: number;
-    directionLeft?: boolean;
-  }[];
-}
+type Props = {
+  skills: Skills[];
+};
 
 function Skills(Props: Props) {
   var arr = Props.skills;
@@ -34,7 +27,7 @@ function Skills(Props: Props) {
 
       <div className="grid grid-cols-4 gap-4">
         {arr.map((skill) => (
-          <SkillObj skill={skill} key={skill.id} />
+          <SkillObj skill={skill} key={skill._id} />
         ))}
       </div>
     </motion.div>

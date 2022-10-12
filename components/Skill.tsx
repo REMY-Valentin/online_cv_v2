@@ -2,18 +2,11 @@ import React, { FC } from "react";
 import { motion } from "framer-motion";
 import * as faIcone from "react-icons/fa";
 import * as siIcone from "react-icons/si";
+import { Skills } from "../typings";
 
-interface Props {
-  skill: {
-    id: number;
-    name: string;
-    iconeName: string;
-    library: string;
-    size: number;
-    lvl: number;
-    directionLeft?: boolean;
-  };
-}
+type Props = {
+  skill: Skills;
+};
 
 function Skill({ skill }: Props) {
   const iconeName = skill.iconeName;
