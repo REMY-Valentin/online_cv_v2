@@ -31,16 +31,24 @@ function Hero({}: Props) {
         </h1>
         <div className="pt-5">
           <Link href="#about">
-            <button className="heroButton">About</button>
+            <button className="px-6 py-6 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">
+              About
+            </button>
           </Link>
           <Link href="#skills">
-            <button className="heroButton">Skills</button>
+            <button className="px-6 py-6 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">
+              Skills
+            </button>
           </Link>
           <Link href="#project">
-            <button className="heroButton">Project</button>
+            <button className="px-6 py-6 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">
+              Project
+            </button>
           </Link>
           <Link href="#contact">
-            <button className="heroButton">Contact</button>
+            <button className="px-6 py-6 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">
+              Contact
+            </button>
           </Link>
         </div>
       </div>

@@ -16,8 +16,8 @@ function Contact({}: Props) {
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => console.log(formData);
   return (
-    <div className="divSection">
-      <h3 className="titleSection">Contact</h3>
+    <div className="flex flex-col relative text-center md:text-left h-screen md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
+      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">Contact</h3>
       <div className="flex flex-col space-y-10">
         <h4 className="text-4xl font-semibold text-center">
           If you need to contact me .<span>Lets talk !</span>
@@ -32,11 +32,30 @@ function Contact({}: Props) {
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-5 w-fit mx-auto">
           <div className="flex space-x-2">
-            <input {...register("name")} className="contactInput" type="text" placeholder="Name" />
-            <input {...register("surname")} className="contactInput" type="text" placeholder="Surname" />
+            <input
+              {...register("name")}
+              className="outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#f7ab0a]/40 focus:text-[#f7ab0a];"
+              type="text"
+              placeholder="Name"
+            />
+            <input
+              {...register("surname")}
+              className="outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#f7ab0a]/40 focus:text-[#f7ab0a];"
+              type="text"
+              placeholder="Surname"
+            />
           </div>
-          <input {...register("email")} className="contactInput" type="email" placeholder="Email" />
-          <textarea {...register("message")} className="contactInput" placeholder="Message" />
+          <input
+            {...register("email")}
+            className="outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#f7ab0a]/40 focus:text-[#f7ab0a];"
+            type="email"
+            placeholder="Email"
+          />
+          <textarea
+            {...register("message")}
+            className="outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#f7ab0a]/40 focus:text-[#f7ab0a];"
+            placeholder="Message"
+          />
           <button type="submit" className="bg-[#f7ab0a] py-5 px-10 rounded-md text-black font-bold text-lg">
             Submit
           </button>
