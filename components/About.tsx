@@ -17,18 +17,18 @@ function About({}: Props) {
     >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">About</h3>
       <motion.div
-        // initial={{
-        //   x: -200,
-        //   opacity: 0,
-        // }}
-        // transition={{
-        //   duration: 1,
-        // }}
-        // whileInView={{
-        //   x: 0,
-        //   opacity: 1,
-        // }}
-        // viewport={{ once: false }} //true if you want the animation just once
+        initial={{
+          x: -200,
+          opacity: 0,
+        }}
+        transition={{
+          duration: 1,
+        }}
+        whileInView={{
+          x: 0,
+          opacity: 1,
+        }}
+        viewport={{ once: false }} //true if you want the animation just once
         className="mt-10 md:mb-0 flex-shrink-0 w-[200px] h-26 md:rounded-lg md:w-[300px] md:h-26 xl:w-[500px] xl:x-[600px] "
       >
         <Image src={aboutImg} alt="about image" className="rounded-full object-cover" placeholder="blur" />
