@@ -45,9 +45,9 @@ const Home = ({ skills, projects }: Props) => {
         <Contact />
       </section>
 
-      <footer className="relative bottom-14 w-full text-center text-lg border-t-2 py-2">
+      <footer className="relative bottom-14 w-full text-center text-lg border-t-2 py-2 border-gray-600">
         <div>
-          <p>Remy Valentin </p>
+          <p className="text-gray-400">Remy Valentin</p>
         </div>
       </footer>
     </div>

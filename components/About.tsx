@@ -27,21 +27,24 @@ function About({}: Props) {
           opacity: 1,
         }}
         viewport={{ once: false }} //true if you want the animation just once
+        className="mt-10 md:mb-0 flex-shrink-0 w-[200px] h-26 md:rounded-lg md:w-[300px] md:h-26 xl:w-[500px] xl:x-[600px] "
       >
-        <Image
-          src={aboutImg}
-          alt="about image"
-          className="mb-20 md:mb-0 flex-shrink-0 w-26 h-26 rounded-full object-cover md:rounded-lg md:w-54 md:h-54 xl:w-[500px] xl:x-[600px]"
-        />
+        <Image src={aboutImg} alt="about image" className="rounded-full object-cover" />
       </motion.div>
       <div className="space-y-10 px-0 md:px-10">
         <h4 className="text-4xl font-semibold">
           Un peut de <span className="underline decoration-[#F7AB0A]/50">background</span> sur moi !
         </h4>
-        <p className="text-sm">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat culpa ipsam illo! Velit voluptate quia autem
-          harum reiciendis commodi voluptatibus, eum corporis eius voluptatem fuga repellendus obcaecati modi
-          consequatur? Iure.
+        <p className="text-md">
+          Passioné d'informatique depuis toujours et après des études en montagne russe, j'ai décidé de me lancer dans
+          le dev en suivant une formation en distanciel avec l'école O'Clock. Les 4 premier mois de formation j'ai apris
+          Html, CSS, JavaScript, PHP, mais plus généralement à codé. Je me suis ensuite spétialisé pendant 1 mois avec
+          le framework Symfony ou j'ai pu découvrir le Backend. Est venu ensuite 1 mois de projet en groupe pour
+          découvrir l'expérience de développer a plusieur et la gestion de projet. Après ces 6 mois de formation le
+          syndrome de l'imposteur a montrer le bout de son nez car je me suis rendu compte et me rend toujours compte de
+          l'étendue du monde de la programmation et de ces languages, frameworks, CMS... Mais graçe à la formation
+          O'Clock, on m'a appris à apprendre et donc j'ai continuer à décourvrir de nouveaux frameworks principalement
+          au niveau Frontend avec VueJs et React.
         </p>
       </div>
     </motion.div>
