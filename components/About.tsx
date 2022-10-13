@@ -31,7 +31,7 @@ function About({}: Props) {
         viewport={{ once: false }} //true if you want the animation just once
         className="mt-10 md:mb-0 flex-shrink-0 w-[200px] h-26 md:rounded-lg md:w-[300px] md:h-26 xl:w-[500px] xl:x-[600px] "
       >
-        <Image src={aboutImg} alt="about image" className="rounded-full object-cover" />
+        <Image src={aboutImg} alt="about image" className="rounded-full object-cover" placeholder="blur" />
       </motion.div>
       <div className="space-y-10 px-0 md:px-10">
         <h4 className="text-4xl font-semibold">
