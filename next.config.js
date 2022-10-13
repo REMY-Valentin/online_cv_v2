@@ -2,14 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  // images: {
-  //   remotePatterns: [
-  //     {
-  //       protocol: "https",
-  //       hostname: "**",
-  //     },
-  //   ],
-  // },
+  images: {
+    domains: ["cdn.sanity.io"],
+  },
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
