@@ -9,7 +9,6 @@ type Props = {
 };
 
 function Project({ projects }: Props) {
-  console.log(projects);
   // const [count, setCount] = useState(0);
 
   // const handleScrollLeft = (event: React.MouseEvent<HTMLDivElement>) => {

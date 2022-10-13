@@ -21,6 +21,7 @@ function Hero({}: Props) {
         alt="Profile picture"
         width={150}
         height={150}
+        placeholder="blur"
         className="relative rounded-full mx-auto object-cover"
       />
       <div className="z-20">
