@@ -7,27 +7,27 @@ type Props = {};
 
 type Inputs = {
   name: string;
-  surname: string;
+  subject: string;
   email: string;
   message: string;
 };
 
 function Contact({}: Props) {
   const { register, handleSubmit } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (formData) => console.log(formData);
+  const onSubmit: SubmitHandler<Inputs> = (formData) => {
+    window.location.href = `mailto:valentin.remy88@gmail.com?subject=${formData.subject}&body=Bonjour je suis ${formData.name}, ${formData.message}`;
+  };
   return (
     <div className="flex flex-col relative text-center md:text-left h-screen md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">Contact</h3>
       <div className="flex flex-col space-y-10">
-        <h4 className="text-4xl font-semibold text-center">
-          If you need to contact me .<span>Lets talk !</span>
-        </h4>
+        <h4 className="text-4xl font-semibold text-center">Si vous voulez me contacter :</h4>
         <div className="flex items-center space-x-5 justify-center">
-          <BsFillTelephoneFill color="#f7ab0a" size={20} />
+          <BsFillTelephoneFill color="#f7ab0a" size={25} />
           <p className="text-2xl">+33786273538</p>
         </div>
         <div className="flex items-center space-x-5 justify-center">
-          <HiOutlineMail color="#f7ab0a" size={20} />
+          <HiOutlineMail color="#f7ab0a" size={25} />
           <p className="text-2xl">valentin.remy88@gmail.com</p>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-5 w-fit mx-auto">
@@ -36,13 +36,13 @@ function Contact({}: Props) {
               {...register("name")}
               className="outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#f7ab0a]/40 focus:text-[#f7ab0a];"
               type="text"
-              placeholder="Name"
+              placeholder="Nom Prénom"
             />
             <input
-              {...register("surname")}
+              {...register("subject")}
               className="outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#f7ab0a]/40 focus:text-[#f7ab0a];"
               type="text"
-              placeholder="Surname"
+              placeholder="Sujet"
             />
           </div>
           <input

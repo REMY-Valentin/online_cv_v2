@@ -9,7 +9,7 @@ type Props = {};
 
 function Hero({}: Props) {
   const [text, count] = useTypewriter({
-    words: ["THAT’S ONE SMALL STEP FOR MAN, ONE GIANT LEAP FOR MANKIND", "HOUSTON, WE’VE HAD A PROBLEM HERE."],
+    words: ["PHOTO NON CONTRACTUELLE", "CONSOLE.LOG('HERE')", "CONSOLE.LOG('HERE 2')", "YARN ADD REACT", "CODE ."],
     loop: true,
     delaySpeed: 2000,
   });

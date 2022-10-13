@@ -43,7 +43,7 @@ function Header({}: Props) {
           }}
         >
           <SocialIcon className="cursor-pointer" network="email" fgColor="gray" bgColor="transparent" />
-          <p className="uppercase hidden md:inline-flex text-sm text-gray-500">Contact me</p>
+          <p className="cursor-pointer uppercase hidden md:inline-flex text-sm text-gray-500">Me contacter</p>
         </motion.div>
       </Link>
     </header>

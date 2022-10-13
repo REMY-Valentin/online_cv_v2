@@ -11,7 +11,6 @@ type Props = {
 };
 
 function ProjectCard({ project }: Props) {
-  console.log(project);
   function IconeSelector(name: string, index: number) {
     // console.log(typeof name);
     let library = name.slice(0, 2).toLowerCase();
@@ -47,7 +46,7 @@ function ProjectCard({ project }: Props) {
           src={urlFor(project?.image).url()}
           alt="project image"
           height={250}
-          width={450}
+          width={400}
           className="rounded-2xl"
         />
       </motion.div>

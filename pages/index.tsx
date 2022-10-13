@@ -54,7 +54,7 @@ const Home = ({ skills, projects }: Props) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const skills: Skills[] = await fetchSkills();
   const projects: Projects[] = await fetchProjects();
   return {
@@ -62,6 +62,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
       skills,
       projects,
     },
+    revalidate: 86400,
   };
 };
 

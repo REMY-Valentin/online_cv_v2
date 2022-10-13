@@ -2,14 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "**",
-      },
-    ],
-  },
+  // images: {
+  //   remotePatterns: [
+  //     {
+  //       protocol: "https",
+  //       hostname: "**",
+  //     },
+  //   ],
+  // },
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
