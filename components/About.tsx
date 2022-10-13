@@ -6,6 +6,8 @@ import aboutImg from "../public/resources/online_cv_about.gif";
 type Props = {};
 
 function About({}: Props) {
+  const text =
+    "Passioné d'informatique depuis toujours et après des études en montagne russe, j'ai décidé de me lancer dans le dev en suivant une formation en distanciel avec l'école O'Clock. Les 4 premier mois de formation j'ai apris Html, CSS, JavaScript, PHP, mais plus généralement à codé. Je me suis ensuite spétialisé pendant 1 mois avec le framework Symfony ou j'ai pu découvrir le Backend. Est venu ensuite 1 mois de projet en groupe pour découvrir l'expérience de développer a plusieur et la gestion de projet. Après ces 6 mois de formation le syndrome de l'imposteur a montrer le bout de son nez car je me suis rendu compte et me rend toujours compte de l'étendue du monde de la programmation et de ces languages, frameworks, CMS... Mais graçe à la formation O'Clock, on m'a appris à apprendre et donc j'ai continuer à décourvrir de nouveaux frameworks principalement au niveau Frontend avec VueJs et React.";
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -35,17 +37,7 @@ function About({}: Props) {
         <h4 className="text-4xl font-semibold">
           Un peut de <span className="underline decoration-[#F7AB0A]/50">background</span> sur moi !
         </h4>
-        <p className="text-md">
-          Passioné d'informatique depuis toujours et après des études en montagne russe, j'ai décidé de me lancer dans
-          le dev en suivant une formation en distanciel avec l'école O'Clock. Les 4 premier mois de formation j'ai apris
-          Html, CSS, JavaScript, PHP, mais plus généralement à codé. Je me suis ensuite spétialisé pendant 1 mois avec
-          le framework Symfony ou j'ai pu découvrir le Backend. Est venu ensuite 1 mois de projet en groupe pour
-          découvrir l'expérience de développer a plusieur et la gestion de projet. Après ces 6 mois de formation le
-          syndrome de l'imposteur a montrer le bout de son nez car je me suis rendu compte et me rend toujours compte de
-          l'étendue du monde de la programmation et de ces languages, frameworks, CMS... Mais graçe à la formation
-          O'Clock, on m'a appris à apprendre et donc j'ai continuer à décourvrir de nouveaux frameworks principalement
-          au niveau Frontend avec VueJs et React.
-        </p>
+        <p className="text-md">{text}</p>
       </div>
     </motion.div>
   );
